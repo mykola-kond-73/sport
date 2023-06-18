@@ -1,0 +1,237 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="freehtml5.co" />
+
+    <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'sport/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'sport/css/style.css' %}">
+    <script src="{% static 'sport/js/modernizr-2.6.2.min.js' %}"></script>
+
+    {% block links %}
+    {% endblock %}
+</head>
+
+<body>
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+        {% block content %}
+            {% block navbar %}
+                <nav class="fh5co-nav" role="navigation">
+                    <div class="top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-right">
+                                    <p class="num">Тел: +38 097 444 2525</p>
+                                    <ul class="fh5co-social">
+                                        <li><i class="icon-twitter"></i></li>
+                                        <li><i class="icon-dribbble"></i></li>
+                                        <li><i class="icon-github"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div id="fh5co-logo"><a href="{% url 'home' %}">Stamina<span>.</span></a></div>
+                                </div>
+                                <div class="col-xs-10 text-right menu-1">
+                                    <ul>
+                                        {% if title == 'Sport' %}
+                                            <li class="active"><a href="{% url 'home' %}">Головна</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'home' %}">Головна</a></li>
+                                        {% endif %}
+
+                                        {% if title == 'Про нас' %}
+                                            <li class="active"><a href="{% url 'about' %}">Про нас</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'about' %}">Про нас</a></li>
+                                        {% endif %}
+
+                                        {% if title == 'Абонементи' %}
+                                            <li class="active"><a href="{% url 'pricing' %}">Абонементи</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'pricing' %}">Абонементи</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            {% endblock %}
+
+            {% block header %}
+                <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(/static/sport/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 text-center">
+                                <div class="display-t">
+                                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                        {% if title == 'Sport' %}
+                                            <h1>Зробіть це стилем життя, а не обов’язком</h1>
+                                            <p><a href="{% static 'sport/videos/my_stuffed_granny (720p).mp4' %}" class="btn btn-primary popup-vimeo">Подивися наше відео</a></p>
+                                        {% else %}
+                                            <h1>{{title}}</h1>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            {% endblock %}
+
+            {% block order-form %}
+            {% endblock %}
+
+            {% block services %}
+            {% endblock %}
+
+            {% block experts %}
+            {% endblock %}
+
+            {% block pricing %}
+            {% endblock %}
+
+            {% block share %}
+                <div id="fh5co-started" class="fh5co-bg" style="background-image: url(/static/sport/images/img_bg_3.jpg);">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row animate-box">
+                            <div class="col-md-8 col-md-offset-2 text-center">
+                                <h2>Заняття фітнесом цього літа <br> <span> Сплатіть зараз і <br> Отримуйте <span class="percent">35%</span> Знижки</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block footer %}
+                <footer id="fh5co-footer" class="fh5co-bg" style="background-image: url(/static/sport/images/img_bg_1.jpg);" role="contentinfo">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row row-pb-md">
+                            <div class="col-md-4 fh5co-widget">
+                                <h3>Трохи про витривалість.</h3>
+                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Класи</h3>
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <ul class="fh5co-footer-links">
+                                        <li>Кардіо</li>
+                                        <li>Бодібілдинг</li>
+                                        <li>Йога</li>
+                                        <li>Бокс</li>
+                                        <li>Біг</li>
+                                    </ul>
+                                </div>
+            
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <ul class="fh5co-footer-links">
+                                        <li>Бокс</li>
+                                        <li>Бойові мистецтва</li>
+                                        <li>Карате</li>
+                                        <li>Кунг-фу</li>
+                                        <li>Баскетбол</li>
+                                    </ul>
+                                </div>
+            
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <ul class="fh5co-footer-links">
+                                        <li>Бадмінтон</li>
+                                        <li>Бодібілдинг</li>
+                                        <li>Командні види спорту</li>
+                                        <li>Біг</li>
+                                        <li>Висококваліфіковані тренери</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row copyright">
+                            <div class="col-md-12 text-center">
+                                <p>
+                                    <ul class="fh5co-social-icons">
+                                        <li><i class="icon-twitter"></i></li>
+                                        <li><i class="icon-facebook"></i></li>
+                                        <li><i class="icon-linkedin"></i></li>
+                                        <li><i class="icon-dribbble"></i></li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+            
+                    </div>
+                </footer>
+            {% endblock %}
+        {% endblock %}
+    </div>
+
+
+    <div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+
+
+	<script src="{% static 'sport/js/jquery.min.js' %}"></script>
+	<script src="{% static 'sport/js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'sport/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'sport/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'sport/js/jquery.stellar.min.js' %}"></script>
+	<script src="{% static 'sport/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'sport/js/jquery.countTo.js' %}"></script>
+	<script src="{% static 'sport/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'sport/js/magnific-popup-options.js' %}"></script>
+	<script src="{% static 'sport/js/main.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

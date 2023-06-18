@@ -1,0 +1,124 @@
+{% extends 'sport/base.html' %}
+
+
+{% block services %}
+	<div id="fh5co-services" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span><img class="img-responsive" src="static/sport/images/dumbbell.svg" alt=""></span>
+						<h3>Важка атлетика</h3>
+						<p>Ми звинувачуємо найдостойніших у найжорстокіших речах життя, але вони забезпечують цілий політ бід.
+							Він ненавидить частину свого болю</p>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span><img class="img-responsive" src="static/sport/images/exercise.svg" alt=""></span>
+						<h3>Біг</h3>
+						<p>Ми звинувачуємо найдостойніших у найжорстокіших речах життя, але вони забезпечують цілий політ бід.
+							Він ненавидить частину свого болю</p>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span><img class="img-responsive" src="static/sport/images/yoga-carpet.svg" alt=""></span>
+						<h3>Yoga</h3>
+						<p>Ми звинувачуємо найдостойніших у найжорстокіших речах життя, але вони забезпечують цілий політ бід.
+							Він ненавидить частину свого болю</p>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block experts %}
+	<div id="fh5co-trainer">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Фітнес експерти</h2>
+					<p>Ми звинувачуємо найдостойніших у найжорстокіших речах життя, але вони забезпечують цілий політ бід. Він ненавидить частину свого болю.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 animate-box">
+					<div class="trainer">
+							<img class="img-responsive" src="static/sport/images/trainer-1.jpg" alt="trainer">
+						<div class="title">
+							<h3>Василь Посвістак</h3>
+							<span>Експерт з танців</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 animate-box">
+					<div class="trainer">
+						<img class="img-responsive" src="static/sport/images/trainer-2.jpg" alt="trainer">
+						<div class="title">
+							<h3>Сергій Нагнибіда</h3>
+							<span>Експерт з бодібілдингу</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 animate-box">
+					<div class="trainer">
+						<img class="img-responsive" src="static/sport/images/trainer-3.jpg" alt="trainer">
+						<div class="title">
+							<h3>Марія Василевська</h3>
+							<span>Експерт з йоги</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block pricing %}
+	<div id="fh5co-pricing">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Абонементи</h2>
+					<p>Ми звинувачуємо найдостойніших у найжорстокіших речах життя, але вони забезпечують цілий політ бід. Він ненавидить частину свого болю</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+					{% for element in data %}
+						<div class="col-md-3 animate-box">
+							{% if element.share != none %}
+								<div class="price-box popular" >
+									<h2 class="pricing-plan">{{element.title}}</h2>
+									<div class="price"><sup class="currency">₴</sup>{{element.price}}<small>/місяць</small></div>
+									<ul class="classes">
+										{% for i in element.descriptionList %}
+											<li>{{i}}</li>
+										{% endfor %}
+									</ul>
+									<a href="{% url 'form' element.id %}" class="btn btn-select-plan btn-sm">Обрати</a>
+								</div>
+							{% else %}
+								<div class="price-box" >
+									<h2 class="pricing-plan">{{element.title}}</h2>
+									<div class="price"><sup class="currency">₴</sup>{{element.price}}<small>/місяць</small></div>
+									<ul class="classes">
+										{% for i in element.descriptionList %}
+											<li>{{i}}</li>
+										{% endfor %}
+									</ul>
+									<a href="{% url 'form' element.id %}" class="btn btn-select-plan btn-sm">Обрати</a>
+								</div>
+							{% endif %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

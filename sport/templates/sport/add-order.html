@@ -1,0 +1,65 @@
+{% extends 'sport/base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block order-form %}
+    <div id="fh5co-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 animate-box">
+                    <h3>Оформити замовлення</h3>
+                    <form method="post" action="{% url 'form' season_ticket_id %}" id="main-order-form" name="order-form">
+                        {% csrf_token %}
+
+                        {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                        <div class="row form-group">{{eror}}</div>
+                        {% endfor %}
+                        {% endif %}
+                        {{form.non_field_errors}}
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                {{form.phone.errors}}
+                                {{form.phone.label_tag}}
+                                {{form.phone}}
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                {{form.email.errors}}
+                                {{form.email.label_tag}}
+                                {{form.email}}
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                {{form.comment.errors}}
+                                {{form.comment.label_tag}}
+                                {{form.comment}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Замовити">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        const isSureMessage = (event) => {
+            isSure = confirm("Ви підтверджуєте відправлення заявки на купівлю абонемента?")
+            if (!isSure) event.preventDefault()
+            else alert("Наші менеджери невдовзі зв'яжуться із Вами")
+        }
+
+        const form = document.getElementById('main-order-form')
+        form.addEventListener('submit', isSureMessage)
+    </script>
+{% endblock %}
